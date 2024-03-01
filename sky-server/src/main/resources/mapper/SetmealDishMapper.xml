@@ -19,7 +19,7 @@
     </insert>
 
     <delete id="deleteBatchBySetmealId">
-        delete from setmeal_dish where id in
+        delete from setmeal_dish where setmeal_id in
         <foreach collection="ids" open="(" close=")" separator="," item="id">
             #{id}
         </foreach>
