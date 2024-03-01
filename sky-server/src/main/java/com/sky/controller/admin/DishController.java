@@ -103,4 +103,13 @@ public class DishController {
         return Result.success(list);
     }
 
+    @PostMapping("/status/{status}")
+    @ApiOperation("菜品起售停售")
+    public Result StartOrStop(@PathVariable Integer status,Long id){
+        log.info("菜品：{} 起售状态：{}",id,status);
+        dishService.StartOrStop(status,id);
+        return  Result.success();
+
+    }
+
 }
